@@ -87,6 +87,7 @@ class ImageController extends Controller
         $picture->filename = $path;
         $picture->user_id = $id;
         $picture->save();
+        \Storage::disk('google')->put( $originalname, $image);
 
         return redirect()->back()->with('status', 'Image Has been uploaded');
     }

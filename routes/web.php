@@ -30,4 +30,8 @@ Route::get('/vedio', [VedioController::class, 'index']);
 Route::post('/vedioupload', [VedioController::class, 'upload']);
 Route::get('/document_upload', [DocumentController::class, 'index']);
 Route::post('/documentupload', [DocumentController::class, 'upload']);
+Route::get('test', function() {
+    Storage::disk('google')->put('test.txt', 'Hello World');
+    dd('123');
+});
 });
